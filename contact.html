@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Collaboration | Rodrigo D. Perea, Ph.D.</title>
+    <meta name="description" content="Connect with Dr. Rodrigo D. Perea for senior data science leadership, healthcare analytics consulting, clinical AI architecture, or MedicAI platform demos.">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-channel {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--transition-fast);
+        }
+
+        .contact-channel:hover {
+            border-color: var(--border-accent);
+            transform: translateX(4px);
+        }
+
+        .channel-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--cyan-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            outline: none;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-control:focus {
+            border-color: var(--cyan-light);
+            box-shadow: 0 0 10px var(--cyan-glow);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-avatar">🧠</div>
+                <span>Rodrigo D. Perea<span style="color: var(--cyan-light);">, Ph.D.</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Platform</a></li>
+                <li><a href="cv.html" class="nav-link">Curriculum Vitae</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+                <a href="mailto:rperea14@live.com" class="btn btn-cyan btn-sm">Direct Email</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Flagship</a>
+        <a href="cv.html" class="nav-link">Curriculum Vitae</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+
+    <!-- Main Section -->
+    <main class="section" style="padding-top: 8rem;">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-badge">📫 Get in Touch</span>
+                <h1 class="section-title">Let's Connect & Collaborate</h1>
+                <p class="section-subtitle">
+                    Open for strategic data science advisory, healthcare AI consulting, executive leadership roles, and MedicAI platform demonstrations.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                
+                <!-- Left: Channels & Info -->
+                <div class="contact-info-card">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Direct Channels</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">
+                        Feel free to reach out directly via email or connect with me on LinkedIn and GitHub.
+                    </p>
+
+                    <!-- Email -->
+                    <a href="mailto:rperea14@live.com" class="contact-channel" style="color: inherit;">
+                        <div class="channel-icon">📧</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Direct Email</div>
+                            <div style="font-weight: 600; color: var(--cyan-light);">rperea14@live.com</div>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/rperea" target="_blank" class="contact-channel" style="color: inherit;">
+                        <div class="channel-icon">💼</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">LinkedIn Profile</div>
+                            <div style="font-weight: 600; color: var(--cyan-light);">linkedin.com/in/rperea ↗</div>
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/rperea14" target="_blank" class="contact-channel" style="color: inherit;">
+                        <div class="channel-icon">💻</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">GitHub Repositories</div>
+                            <div style="font-weight: 600; color: var(--cyan-light);">github.com/rperea14 ↗</div>
+                        </div>
+                    </a>
+
+                    <!-- Location -->
+                    <div class="contact-channel">
+                        <div class="channel-icon">📍</div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Location Base</div>
+                            <div style="font-weight: 600; color: var(--text-primary);">Austin, Texas, USA (CST)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Inquiry Form -->
+                <div class="contact-form-card">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send a Message</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 0.95rem;">
+                        Submit your inquiry below or open your preferred mail client.
+                    </p>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="sender-name">Your Full Name</label>
+                            <input type="text" id="sender-name" class="form-control" placeholder="e.g., Dr. Jane Smith" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-email">Email Address</label>
+                            <input type="email" id="sender-email" class="form-control" placeholder="name@organization.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-type">Area of Interest</label>
+                            <select id="inquiry-type" class="form-control">
+                                <option value="MedicAI Platform Demo & Architecture">MedicAI Platform Demo & Architecture</option>
+                                <option value="Strategic Healthcare Analytics Advisory">Strategic Healthcare Analytics Advisory</option>
+                                <option value="Population Health & Risk Modeling">Population Health & Risk Modeling</option>
+                                <option value="Executive / Senior AI Leadership Role">Executive / Senior AI Leadership Role</option>
+                                <option value="Scientific Research & Neuroimaging Collaboration">Scientific Research & Neuroimaging Collaboration</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-message">Message Details</label>
+                            <textarea id="sender-message" class="form-control" placeholder="Please describe your objective, timeline, or discussion topics..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-cyan btn-lg" style="width: 100%;" id="form-submit-btn">
+                            <span>🚀 Send Message via Email Client</span>
+                        </button>
+                    </form>
+
+                    <div id="form-feedback" style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: var(--radius-sm); font-size: 0.9rem;"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Rodrigo D. Perea, Ph.D. • <a href="index.html">Portfolio Home</a> • <a href="medicai.html">MedicAI Platform</a> • <a href="cv.html">Curriculum Vitae</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/core.js"></script>
+    <script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value;
+            const email = document.getElementById('sender-email').value;
+            const subject = document.getElementById('inquiry-type').value;
+            const body = document.getElementById('sender-message').value;
+
+            const mailtoLink = `mailto:rperea14@live.com?subject=${encodeURIComponent(`[Portfolio Inquiry] ${subject} - ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${body}`)}`;
+            
+            window.location.href = mailtoLink;
+
+            const feedback = document.getElementById('form-feedback');
+            feedback.style.display = 'block';
+            feedback.style.background = 'rgba(16, 185, 129, 0.15)';
+            feedback.style.border = '1px solid rgba(16, 185, 129, 0.35)';
+            feedback.style.color = 'var(--emerald-light)';
+            feedback.innerHTML = `✓ Preparing email client with your message for <strong>rperea14@live.com</strong>. Thank you!`;
+        }
+    </script>
+</body>
+</html>

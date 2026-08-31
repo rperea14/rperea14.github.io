@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Publications & Research | Rodrigo D. Perea, Ph.D.</title>
+    <meta name="description" content="Peer-reviewed scientific publications by Dr. Rodrigo D. Perea in Nature Neuroscience, Neurobiology of Aging, NeuroImage Clinical, and Alzheimer's biomarker modeling.">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        .pub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem;
+            margin-bottom: 1.75rem;
+            transition: all var(--transition-normal);
+        }
+
+        .pub-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pub-journal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.85rem;
+            border-radius: var(--radius-full);
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: var(--cyan-light);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+        }
+
+        .pub-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .pub-authors strong {
+            color: var(--cyan-light);
+        }
+
+        .pub-abstract {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .pub-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-avatar">🧠</div>
+                <span>Rodrigo D. Perea<span style="color: var(--cyan-light);">, Ph.D.</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Platform</a></li>
+                <li><a href="cv.html" class="nav-link">Curriculum Vitae</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="publications.html" class="nav-link active">Publications</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+                <a href="https://scholar.google.com/citations?user=7rtswHUAAAAJ&hl=en" target="_blank" class="btn btn-cyan btn-sm">Google Scholar ↗</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Flagship</a>
+        <a href="cv.html" class="nav-link">Curriculum Vitae</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link active">Publications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Main Section -->
+    <main class="section" style="padding-top: 8rem;">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-badge">🔬 Peer-Reviewed Research</span>
+                <h1 class="section-title">Scientific Publications & Papers</h1>
+                <p class="section-subtitle">
+                    15+ peer-reviewed articles spanning brain connectivity, white matter microstructural imaging, Alzheimer's disease biomarkers, and digital health.
+                </p>
+            </div>
+
+            <!-- Scholar Quick Bar -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1.75rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span style="font-weight: 700; color: var(--text-primary); font-size: 1.05rem;">Harvard Medical School & Mass General Hospital Research Cohorts</span>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem;">Part of the $5.3M NIH-supported Harvard Aging Brain Study (HABS).</p>
+                </div>
+                <a href="https://scholar.google.com/citations?user=7rtswHUAAAAJ&hl=en" target="_blank" class="btn btn-cyan btn-sm">
+                    View Full Citation Profile on Google Scholar ↗
+                </a>
+            </div>
+
+            <!-- Publications List -->
+            <div>
+
+                <!-- Paper 1 -->
+                <article class="pub-card">
+                    <span class="pub-journal-badge">Neurobiology of Aging • 2019</span>
+                    <h3 class="pub-title">Synergism between fornix microstructure and beta amyloid accelerates memory decline in clinically normal older adults</h3>
+                    <div class="pub-authors">
+                        <strong>Perea RD</strong>, Rabin JS, Buckley RF, Johnson KA, Sperling RA, Hedden T.
+                    </div>
+                    <div class="pub-abstract">
+                        <strong>Abstract:</strong> The fornix is the primary cholinergic and subcortical efferent pathway from the hippocampus. In clinically normal older adults, we tested whether fornix diffusion microstructure interacts with cortical β-amyloid (Aβ) burden to accelerate cognitive decline over longitudinal follow-up. Findings demonstrated that microstructural fornix degradation synergistically amplified Aβ-related memory decline, offering key prognostic utility for early Alzheimer's disease detection.
+                    </div>
+                    <div class="pub-actions">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/31351299/" target="_blank" class="btn btn-cyan btn-sm">PubMed Entry ↗</a>
+                        <button class="btn btn-secondary btn-sm" onclick="copyToClipboard('@article{perea2019synergism,\n  title={Synergism between fornix microstructure and beta amyloid accelerates memory decline in clinically normal older adults},\n  author={Perea, Rodrigo D and Rabin, Jennifer S and Buckley, Rachel F and Johnson, Keith A and Sperling, Reisa A and Hedden, Trey},\n  journal={Neurobiology of Aging},\n  volume={81},\n  pages={38--46},\n  year={2019},\n  publisher={Elsevier}\n}', this, 'BibTeX Copied!')">
+                            📋 Copy BibTeX
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Paper 2 -->
+                <article class="pub-card">
+                    <span class="pub-journal-badge">Nature Neuroscience • 2018</span>
+                    <h3 class="pub-title">Reduced tract integrity predicts downstream tau accumulation in amyloid positive normal older individuals</h3>
+                    <div class="pub-authors">
+                        Jacobs HIL, Hedden T, <strong>Perea RD</strong>, Schultz AP, Sepulcre J, Johnson KA, et al.
+                    </div>
+                    <div class="pub-abstract">
+                        <strong>Abstract:</strong> Understanding how Alzheimer's pathology propagates across connected brain networks is critical for early therapeutic intervention. Using advanced diffusion connectomics and tau-PET imaging, this study identified white matter tract degradation as an antecedent structural vulnerability facilitating the spread of tau neurofibrillary tangles from medial temporal regions into neocortex.
+                    </div>
+                    <div class="pub-actions">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/29459765/" target="_blank" class="btn btn-cyan btn-sm">Nature Article ↗</a>
+                        <button class="btn btn-secondary btn-sm" onclick="copyToClipboard('@article{jacobs2018reduced,\n  title={Reduced tract integrity predicts downstream tau accumulation in amyloid positive normal older individuals},\n  author={Jacobs, Heidi IL and Hedden, Trey and Perea, Rodrigo D and Schultz, Aaron P and Sepulcre, Jorge and Johnson, Keith A and others},\n  journal={Nature Neuroscience},\n  volume={21},\n  number={3},\n  pages={424--431},\n  year={2018}\n}', this, 'BibTeX Copied!')">
+                            📋 Copy BibTeX
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Paper 3 -->
+                <article class="pub-card">
+                    <span class="pub-journal-badge">NeuroImage: Clinical • 2019</span>
+                    <h3 class="pub-title">Connectome-derived diffusion characteristics of the fornix in Alzheimer's disease</h3>
+                    <div class="pub-authors">
+                        <strong>Perea RD</strong>, Rabin JS, Schultz AP, Sperling RA, Johnson KA, Hedden T.
+                    </div>
+                    <div class="pub-abstract">
+                        <strong>Abstract:</strong> Quantitative diffusion MRI tractography of the fornix in large-scale clinical cohorts (n>400). Demonstrates automated probabilistic segmentation frameworks to quantify axonal and myelin alterations in preclinical and symptomatic Alzheimer's dementia.
+                    </div>
+                    <div class="pub-actions">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/30009139/" target="_blank" class="btn btn-cyan btn-sm">Read on ScienceDirect ↗</a>
+                        <button class="btn btn-secondary btn-sm" onclick="copyToClipboard('@article{perea2019connectome,\n  title={Connectome-derived diffusion characteristics of the fornix in Alzheimer\'s disease},\n  author={Perea, Rodrigo D and Rabin, Jennifer S and Schultz, Aaron P and Sperling, Reisa A and Johnson, Keith A and Hedden, Trey},\n  journal={NeuroImage: Clinical},\n  volume={19},\n  pages={331--342},\n  year={2019}\n}', this, 'BibTeX Copied!')">
+                            📋 Copy BibTeX
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Paper 4 -->
+                <article class="pub-card">
+                    <span class="pub-journal-badge">Journal of Alzheimer's Disease • 2018</span>
+                    <h3 class="pub-title">Interactive effects of white matter hyperintensities and amyloid burden on cognitive trajectories</h3>
+                    <div class="pub-authors">
+                        Rabin JS, <strong>Perea RD</strong>, Buckley RF, Hedden T, Sperling RA, Johnson KA.
+                    </div>
+                    <div class="pub-abstract">
+                        <strong>Abstract:</strong> Investigates the combined vascular and neurodegenerative pathologies in aging individuals, demonstrating that cerebrovascular small vessel disease accelerates amyloid-induced cognitive decline.
+                    </div>
+                    <div class="pub-actions">
+                        <a href="https://scholar.google.com/citations?user=7rtswHUAAAAJ&hl=en" target="_blank" class="btn btn-cyan btn-sm">Scholar Entry ↗</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Scholar Callout -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Looking for co-authored conference abstracts, book chapters, or complete citation metrics?</p>
+                <a href="https://scholar.google.com/citations?user=7rtswHUAAAAJ&hl=en" target="_blank" class="btn btn-secondary btn-lg">
+                    <span>🔬 View Full Google Scholar Index (15+ Articles)</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Rodrigo D. Perea, Ph.D. • <a href="index.html">Portfolio Home</a> • <a href="medicai.html">MedicAI Platform</a> • <a href="cv.html">Curriculum Vitae</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/core.js"></script>
+</body>
+</html>

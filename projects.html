@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Innovation Portfolio | Rodrigo D. Perea, Ph.D.</title>
+    <meta name="description" content="Portfolio of machine learning, healthcare analytics, ambient clinical AI, and biomedical imaging projects engineered by Dr. Rodrigo D. Perea.">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--cyan-light);
+            color: var(--cyan-light);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 260px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.5rem 1rem 0.5rem 2.2rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color var(--transition-fast);
+        }
+
+        .search-box input:focus {
+            border-color: var(--cyan-light);
+        }
+
+        .search-box span {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.25rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-avatar">🧠</div>
+                <span>Rodrigo D. Perea<span style="color: var(--cyan-light);">, Ph.D.</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Platform</a></li>
+                <li><a href="cv.html" class="nav-link">Curriculum Vitae</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+                <a href="medicai.html" class="btn btn-cyan btn-sm">Explore MedicAI</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="medicai.html" class="nav-link nav-link-flagship">✨ MedicAI Flagship</a>
+        <a href="cv.html" class="nav-link">Curriculum Vitae</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="section" style="padding-top: 8rem;">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-badge">🚀 Systems & Solutions</span>
+                <h1 class="section-title">Projects & Innovation Portfolio</h1>
+                <p class="section-subtitle">
+                    Full-stack clinical AI architectures, population health risk modeling, medical economics, and neuroimaging analytics.
+                </p>
+            </div>
+
+            <!-- Filters & Search Bar -->
+            <div class="filter-container">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="clinical-ai">Clinical AI & Software</button>
+                    <button class="filter-btn" data-filter="population-health">Population Health & Risk</button>
+                    <button class="filter-btn" data-filter="neuroimaging">Neuroimaging & Biomarkers</button>
+                </div>
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input type="text" id="search-input" placeholder="Search projects by keyword...">
+                </div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="card-grid">
+
+                <!-- Project 1: MedicAI -->
+                <div class="project-card filterable-card" data-category="clinical-ai">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="status-pill ready">✨ Flagship Platform</span>
+                                <span style="font-size: 0.8rem; color: var(--cyan-light); font-weight: 700;">2024 – 2026</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">MedicAI (medicai_ropeca)</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">Ambient AI Voice Scribe & EHR • Spin-off by Exponentia Peru</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Spin-off of a healthcare innovation startup project by <strong>Exponentia Peru</strong> (<a href="https://www.exponentia.tech" target="_blank" style="color: var(--cyan-light); font-weight: 600; text-decoration: underline;">www.exponentia.tech</a>), where lead architect Dr. Rodrigo Perea acts as <strong>Chief Information Officer (CIO)</strong>. Built with real-time acoustic diarization (Deepgram Nova-3), dynamic form builder, automated SOAP note extraction, and CIE-10 / DIGEMID catalog integration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill active">Exponentia Peru Spin-Off</span>
+                            <span class="tag-pill">CIO Leadership</span>
+                            <span class="tag-pill">Deepgram Nova-3</span>
+                            <span class="tag-pill">React 18 + Vite</span>
+                            <span class="tag-pill">Node.js 22 GraphQL</span>
+                            <span class="tag-pill">PostgreSQL 17</span>
+                            <span class="tag-pill">Docker Compose</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <a href="medicai.html" class="btn btn-cyan btn-sm">Try Live Scribe Demo →</a>
+                        <a href="medicai.html#architecture" class="btn btn-secondary btn-sm">View Tech Stack</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Population Health Risk Stratification -->
+                <div class="project-card filterable-card" data-category="population-health">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="tag-pill active">Teladoc Health</span>
+                                <span style="font-size: 0.8rem; color: var(--amber); font-weight: 700;">🏆 Value Award 2024</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Population Health Risk & Medical Economics</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">1M+ Member Chronic Condition Portfolio</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Architected risk stratification models and medical economics pipelines evaluating health outcomes and commercial utilization for over 1 million chronic condition members across Diabetes, Hypertension, and Weight Management programs.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill">PySpark</span>
+                            <span class="tag-pill">Databricks</span>
+                            <span class="tag-pill">AWS Redshift</span>
+                            <span class="tag-pill">Risk Adjustment</span>
+                            <span class="tag-pill">Medical Economics</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="cv.html" class="btn btn-secondary btn-sm">Read Case Study in CV →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: CDC DPP Machine Learning Renewal -->
+                <div class="project-card filterable-card" data-category="population-health">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="tag-pill active">Regulatory Compliance</span>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Teladoc Health</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">CDC DPP Compliance & Member Retention ML</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">Securing 3-Year Federal Recognition Renewal</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Led the technical data analytics initiative to regain and secure a 3-year CDC Diabetes Prevention Program recognition renewal. Designed predictive member engagement models and automated validation pipelines protecting multi-million dollar annual revenue.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill">CDC Compliance</span>
+                            <span class="tag-pill">Predictive Modeling</span>
+                            <span class="tag-pill">SQL Pipelines</span>
+                            <span class="tag-pill">Retention ML</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="cv.html" class="btn btn-secondary btn-sm">View Recognition →</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Biogen MS MRI Segmentation -->
+                <div class="project-card filterable-card" data-category="neuroimaging">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="tag-pill active">Biogen Digital Health</span>
+                                <span style="font-size: 0.8rem; color: var(--amber); font-weight: 700;">🌟 CEO Award 2022</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Multiple Sclerosis MRI QC & Radiomics</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">Cross-Institution Imaging Standardization</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Engineered automated deep learning MRI segmentation and quality control algorithms standardizing biomarker assessments across 10 international academic medical centers, supporting FDA regulatory clinical trial submissions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill">Python / PyTorch</span>
+                            <span class="tag-pill">Radiomics</span>
+                            <span class="tag-pill">Medical Imaging QC</span>
+                            <span class="tag-pill">Clinical Trials</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="publications.html" class="btn btn-secondary btn-sm">Explore Associated Research →</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Harvard Aging Brain Study -->
+                <div class="project-card filterable-card" data-category="neuroimaging">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="tag-pill active">Harvard / MGH</span>
+                                <span style="font-size: 0.8rem; color: var(--emerald-light); font-weight: 700;">$5.3M NIH Portfolio</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Connectome-Derived Diffusion & Fornix Tracts</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">Preclinical Alzheimer's Biomarker Modeling</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Pioneered probabilistic tractography algorithms demonstrating the synergistic interaction between white matter fornix microstructural integrity and beta-amyloid/tau burden in accelerating cognitive decline.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill">DTI Tractography</span>
+                            <span class="tag-pill">Biomarker Discovery</span>
+                            <span class="tag-pill">MATLAB / Python</span>
+                            <span class="tag-pill">NIH Grants</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="publications.html" class="btn btn-secondary btn-sm">Read Journal Papers →</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: IoT Device Anomaly Detection -->
+                <div class="project-card filterable-card" data-category="clinical-ai population-health">
+                    <div>
+                        <div class="project-header">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span class="tag-pill active">Connected Health</span>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Teladoc Health</span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Healthcare Device Stream Anomaly Detection</h3>
+                            <p style="color: var(--cyan-light); font-weight: 600; font-size: 0.95rem;">Real-Time Blood Glucose & BP Telemetry</p>
+                        </div>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+                            Engineered unsupervised anomaly detection algorithms across continuous cellular glucometer and blood pressure streams to flag hardware anomalies, sensor artifacts, and acute clinical crisis thresholds.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag-pill">IoT Data Streams</span>
+                            <span class="tag-pill">Anomaly Detection</span>
+                            <span class="tag-pill">Time-Series ML</span>
+                            <span class="tag-pill">Clinical Decision Support</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="contact.html" class="btn btn-secondary btn-sm">Inquire for Details →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Rodrigo D. Perea, Ph.D. • <a href="index.html">Portfolio Home</a> • <a href="medicai.html">MedicAI Platform</a> • <a href="cv.html">Curriculum Vitae</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/core.js"></script>
+    <script src="js/filter.js"></script>
+</body>
+</html>

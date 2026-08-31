@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedicAI | Next-Gen AI Ambient Clinical Scribing & Dynamic EHR Platform</title>
+    <meta name="description" content="MedicAI (medicai_ropeca) - AI-powered electronic health records (EHR) and ambient clinical voice scribing platform with real-time Deepgram diarization, SOAP notes, CIE-10 diagnosis, and prescription management.">
+    <meta name="keywords" content="MedicAI, clinical documentation, AI scribe, EHR, electronic health records, Deepgram, diarization, CIE-10, ICD-10, GraphQL, React">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/medicai.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-avatar">🩺</div>
+                <span>MedicAI <span style="font-size: 0.85rem; color: var(--cyan-light); font-weight: 500; padding: 0.2rem 0.5rem; background: rgba(6,182,212,0.12); border-radius: var(--radius-full); border: 1px solid rgba(6,182,212,0.3);">v2.4 Live</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">← Portfolio Home</a></li>
+                <li><a href="#demo" class="nav-link">Live Scribe Demo</a></li>
+                <li><a href="#features" class="nav-link">Key Capabilities</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#quickstart" class="nav-link">Quickstart</a></li>
+                <li><a href="cv.html" class="nav-link">Creator CV</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Theme">☀️</button>
+                <a href="#demo" class="btn btn-cyan btn-sm">Try Interactive Demo</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <a href="index.html" class="nav-link">← Portfolio Home</a>
+        <a href="#demo" class="nav-link">Live Scribe Demo</a>
+        <a href="#features" class="nav-link">Key Capabilities</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#quickstart" class="nav-link">Quickstart</a>
+        <a href="cv.html" class="nav-link">Creator CV</a>
+    </div>
+
+    <!-- MedicAI Hero -->
+    <header class="medicai-hero">
+        <div class="medicai-hero-glow"></div>
+        <div class="container">
+            <div class="medicai-header">
+                <span class="section-badge">✨ Next-Generation Clinical Intelligence</span>
+                <h1>Ambient AI Scribing & <br><span class="gradient-text">Dynamic EHR Infrastructure</span></h1>
+                <p class="medicai-tagline">
+                    MedicAI liberates healthcare professionals from administrative burden. Featuring real-time acoustic diarization, dynamic multi-specialty form templating, automated CIE-10 (ICD-10) diagnosis coding, and comprehensive prescription management.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#demo" class="btn btn-cyan btn-lg">
+                        <span>▶ Launch Live Scribing Sandbox</span>
+                    </a>
+                    <a href="#architecture" class="btn btn-secondary btn-lg">
+                        <span>Explore Full-Stack Architecture</span>
+                    </a>
+                    <a href="https://github.com/rperea14" target="_blank" class="btn btn-outline btn-lg">
+                        <span>GitHub Repository ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Metrics Row -->
+            <div class="stats-grid" style="margin-top: 1rem;">
+                <div class="stat-card">
+                    <div class="stat-number">>70%</div>
+                    <div class="stat-label">Reduction in Consultation Documentation Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">&lt;2.0s</div>
+                    <div class="stat-label">Real-Time Deepgram Nova-3 Diarization Latency</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Dynamic Field Sync with AI Note Extractors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">CIE-10 & DIGEMID</div>
+                    <div class="stat-label">Pre-Integrated Official Clinical Catalogs</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Ambient AI Scribe Sandbox Demo -->
+    <section class="section section-alt" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⚡ Interactive Live Demonstration</span>
+                <h2 class="section-title">Experience Ambient Scribing in Action</h2>
+                <p class="section-subtitle">
+                    Click <strong>"Start Scribe Demo"</strong> below to watch MedicAI listen to an ambient consultation, separate speakers in real-time, and automatically generate structured clinical SOAP notes with CIE-10 recommendations.
+                </p>
+            </div>
+
+            <!-- Sandbox Outer Container -->
+            <div class="sandbox-wrapper">
+                <!-- Sandbox Top Controls -->
+                <div class="sandbox-topbar">
+                    <div class="sandbox-title-area">
+                        <span style="font-weight: 700; color: var(--text-primary);">Consultation #2026-0842</span>
+                        <span class="status-pill ready" id="scribe-status-pill">● Ready to Stream</span>
+                    </div>
+
+                    <div class="sandbox-controls">
+                        <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">Timer: <span id="audio-timer" style="color: var(--cyan-light); font-weight: 700;">00:00</span></span>
+                        <button class="btn btn-cyan btn-sm" id="start-scribe-btn">▶ Start Scribe Demo</button>
+                        <button class="btn btn-secondary btn-sm" id="reset-scribe-btn">↺ Reset</button>
+                    </div>
+                </div>
+
+                <!-- 2-Column Split: Audio/Transcript Feed vs AI Extracted Notes -->
+                <div class="sandbox-body">
+                    <!-- Left: Waveform & Streaming Transcript -->
+                    <div class="transcript-panel">
+                        <div class="audio-visualizer-container">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);">🎙️ Ambient Microphone / WebSocket Stream</span>
+                                <span style="font-size: 0.75rem; color: var(--cyan-light); font-family: var(--font-mono);">Deepgram Nova-3 (Diarized)</span>
+                            </div>
+                            <canvas class="waveform-canvas" id="waveform-canvas"></canvas>
+                            <div class="audio-meta-row">
+                                <span>Audio Input: 48kHz PCM Stereo</span>
+                                <span>Multi-Speaker: 2 Speakers Detected</span>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Live Streaming Transcript
+                        </div>
+
+                        <div class="transcript-feed" id="transcript-feed">
+                            <div style="text-align: center; padding: 2.5rem 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                                Click <strong style="color: var(--cyan-light);">"Start Scribe Demo"</strong> to begin simulated consultation dialogue and live clinical note synthesis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: AI Dynamic SOAP Note Output -->
+                    <div class="ai-output-panel">
+                        <div class="ai-output-header">
+                            <h4><span>✨</span> Automated Clinical Extraction (SOAP)</h4>
+                            <span class="status-pill ready" style="font-size: 0.72rem;">Dynamic Sync Enabled</span>
+                        </div>
+
+                        <div class="soap-accordion">
+                            <!-- Subjective -->
+                            <div class="soap-section">
+                                <div class="soap-title">
+                                    <span>Subjective (Anamnesis)</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">AI Populated</span>
+                                </div>
+                                <div class="soap-text" id="soap-subjective">Waiting for patient dialogue stream...</div>
+                            </div>
+
+                            <!-- Objective -->
+                            <div class="soap-section">
+                                <div class="soap-title">
+                                    <span>Objective & Physical Exam</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">AI Populated</span>
+                                </div>
+                                <div class="soap-text" id="soap-objective">Waiting for physical examination & vitals data...</div>
+                            </div>
+
+                            <!-- Assessment -->
+                            <div class="soap-section">
+                                <div class="soap-title">
+                                    <span>Assessment & CIE-10 Diagnoses</span>
+                                    <span style="font-size: 0.75rem; color: var(--emerald-light);">ICD Auto-Match</span>
+                                </div>
+                                <div class="soap-text" id="soap-assessment">Awaiting clinical dialogue analysis...</div>
+                                <div id="icd-suggestions" style="margin-top: 0.5rem;">
+                                    <div style="font-size: 0.82rem; color: var(--text-muted);">No diagnoses extracted yet.</div>
+                                </div>
+                            </div>
+
+                            <!-- Plan -->
+                            <div class="soap-section">
+                                <div class="soap-title">
+                                    <span>Plan & Prescriptions</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">AI Populated</span>
+                                </div>
+                                <div class="soap-text" id="soap-plan">Awaiting treatment & prescription orders...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Capabilities Grid -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🚀 Platform Capabilities</span>
+                <h2 class="section-title">Engineered for Modern Clinical Workflows</h2>
+                <p class="section-subtitle">
+                    A comprehensive suite of tools built for speed, accuracy, compliance, and physician satisfaction.
+                </p>
+            </div>
+
+            <div class="feature-grid-3">
+                <div class="feature-box">
+                    <div class="feature-box-icon">🎙️</div>
+                    <h3>Real-Time Voice Scribing</h3>
+                    <p>Live audio streaming over WebSockets with Deepgram Nova-3 diarization, automatically separating physician and patient speech with millisecond turnaround.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-box-icon">📋</div>
+                    <h3>Dynamic Form Builder</h3>
+                    <p>Fully customizable drag-and-drop template builder for general intake, cardiology, neurology, pediatrics, and custom specialty forms.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-box-icon">⚙️</div>
+                    <h3>Granular AI Field Toggles</h3>
+                    <p>Organization admins can configure exactly which consultation fields should be auto-filled by AI summaries, dynamically syncing with form templates.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-box-icon">💊</div>
+                    <h3>Prescription & DIGEMID Catalog</h3>
+                    <p>Built-in drug library linked to official Peruvian DIGEMID database and CIE-10 (ICD-10) diagnosis codes with auto-dosage calculation and printable PDF layouts.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-box-icon">🏢</div>
+                    <h3>Multi-Tenant & Multi-Office</h3>
+                    <p>Role-Based Access Control (Super Admin, Organization Admin, Doctor, Receptionist) with multi-branch calendar sync and appointment scheduling.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-box-icon">🔒</div>
+                    <h3>Enterprise Security & Cloudinary</h3>
+                    <p>Secure audio storage, encrypted patient records, robust Better-Auth authentication, and automated backup mechanisms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture & Monorepo Structure -->
+    <section class="section section-alt" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🛠️ Full-Stack Engineering</span>
+                <h2 class="section-title">Modern Monorepo Architecture</h2>
+                <p class="section-subtitle">
+                    High-performance, modular full-stack stack designed for horizontal scalability and production resilience.
+                </p>
+            </div>
+
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div class="arch-card-badge">Frontend Layer</div>
+                    <h4>React 18 + Vite + TypeScript</h4>
+                    <p>Tailwind CSS, Lucide Icons, Apollo Client (GraphQL), audio waveform visualizers, responsive mobile-first UI.</p>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-badge">API & Real-time Layer</div>
+                    <h4>Node.js 22 + Apollo GraphQL</h4>
+                    <p>Express server, Socket.IO WebSockets for audio streaming, Better-Auth security, Prisma ORM.</p>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-badge">Data & Persistence</div>
+                    <h4>PostgreSQL 17 + Prisma</h4>
+                    <p>Relational schema with organization multi-tenancy, dynamic forms JSON schemas, and automated seeding.</p>
+                </div>
+
+                <div class="arch-card">
+                    <div class="arch-card-badge">AI & Audio Engine</div>
+                    <h4>Deepgram Nova-3 + LLMs</h4>
+                    <p>Acoustic speech-to-text diarization paired with Claude / OpenAI models for structured clinical extraction.</p>
+                </div>
+            </div>
+
+            <!-- Terminal Code Box for Quickstart -->
+            <div class="code-terminal" id="quickstart">
+                <div class="terminal-header">
+                    <div class="terminal-title">Terminal: Quick Start with Docker</div>
+                    <button class="btn btn-outline btn-sm" onclick="copyToClipboard('docker compose up -d --build\ndocker compose exec backend yarn workspace @testapp/backend migrate:deploy\ndocker compose exec backend yarn workspace @testapp/backend seed:deploy', this, 'Copied Commands!')">
+                        📋 Copy Commands
+                    </button>
+                </div>
+                <div class="terminal-code">
+                    <span class="comment"># 1. Clone repository and spin up full stack (PostgreSQL + Backend API + Frontend)</span><br>
+                    <span class="cmd">docker compose up -d --build</span><br><br>
+                    <span class="comment"># 2. Apply Prisma database migrations</span><br>
+                    <span class="cmd">docker compose exec backend yarn workspace @testapp/backend migrate:deploy</span><br><br>
+                    <span class="comment"># 3. Seed initial organization, roles, CIE-10 codes, and sample patient records</span><br>
+                    <span class="cmd">docker compose exec backend yarn workspace @testapp/backend seed:deploy</span><br><br>
+                    <span class="comment"># Frontend App ready at: http://localhost:8080 | GraphQL API: http://localhost:3000/graphql</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creator Connection Banner -->
+    <section class="section">
+        <div class="container" style="text-align: center; max-width: 860px;">
+            <span class="section-badge">👨‍🔬 Creator & Lead Architect</span>
+            <h2 class="section-title">Built by Dr. Rodrigo D. Perea</h2>
+            <p class="section-subtitle" style="margin-bottom: 1.25rem;">
+                MedicAI is a flagship <strong>spin-off of a previous healthcare startup project by Exponentia Peru</strong> (<a href="https://www.exponentia.tech" target="_blank" style="color: var(--cyan-light); font-weight: 700; text-decoration: underline;">www.exponentia.tech</a>), where lead architect <strong>Dr. Rodrigo D. Perea</strong> acts as <strong>Chief Information Officer (CIO)</strong>.
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 2.25rem auto; line-height: 1.6;">
+                Combining 9+ years of healthcare analytics experience, Harvard & MGH biomedical research expertise, and enterprise-grade data science leadership to transform clinical documentation.
+            </p>
+            
+            <!-- Exponentia Badge Pill -->
+            <div style="margin-bottom: 2.25rem; display: inline-flex; align-items: center; gap: 0.75rem; background: var(--bg-card); border: 1px solid rgba(6, 182, 212, 0.3); padding: 0.75rem 1.5rem; border-radius: var(--radius-full); box-shadow: var(--shadow-sm);">
+                <span style="font-size: 1.2rem;">🏢</span>
+                <span style="font-size: 0.92rem; color: var(--text-secondary);">Startup Spin-Off: <strong style="color: var(--text-primary);">Exponentia Peru</strong></span>
+                <span style="color: var(--border-medium);">|</span>
+                <a href="https://www.exponentia.tech" target="_blank" class="btn btn-cyan btn-sm" style="padding: 0.25rem 0.85rem; font-size: 0.8rem;">Visit Exponentia.tech ↗</a>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-cyan btn-lg">Explore Rodrigo's Portfolio</a>
+                <a href="cv.html" class="btn btn-secondary btn-lg">View Detailed CV</a>
+                <a href="contact.html" class="btn btn-outline btn-lg">Schedule a Demo / Discussion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>MedicAI Platform</h4>
+                    <p>Next-Generation AI Clinical Documentation, Electronic Health Records, and Practice Management.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rperea" target="_blank" class="social-btn" title="LinkedIn">💼</a>
+                        <a href="https://github.com/rperea14" target="_blank" class="social-btn" title="GitHub">💻</a>
+                        <a href="mailto:rperea14@live.com" class="social-btn" title="Email">📧</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>MedicAI Features</h5>
+                    <ul class="footer-links">
+                        <li><a href="#demo">Live Ambient Scribe</a></li>
+                        <li><a href="#features">Dynamic Form Builder</a></li>
+                        <li><a href="#features">CIE-10 & DIGEMID</a></li>
+                        <li><a href="#architecture">Monorepo Tech Stack</a></li>
+                        <li><a href="#quickstart">Docker Deployment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Portfolio Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Portfolio Home</a></li>
+                        <li><a href="cv.html">Curriculum Vitae</a></li>
+                        <li><a href="projects.html">Data Science Projects</a></li>
+                        <li><a href="publications.html">Scientific Publications</a></li>
+                        <li><a href="contact.html">Contact Creator</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MedicAI (`medicai_ropeca`) by Rodrigo D. Perea, Ph.D. All rights reserved.</p>
+                <p>Private & Proprietary Healthcare Innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/core.js"></script>
+    <script src="js/medicai-demo.js"></script>
+</body>
+</html>
